@@ -1,8 +1,5 @@
 cmake_minimum_required(VERSION 3.22)
-project(CMakeLibTemplate VERSION 1.1.0)
-
-set(CMAKE_CXX_STANDARD 20)
-set(CMAKE_CXX_STANDARD_REQUIRED True)
+project(CMakeLibTemplate VERSION 0.0.1)
 
 # Enable CTest and options only for the main project
 if(CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR)
@@ -27,6 +24,12 @@ file(GLOB_RECURSE SOURCES source/*.cpp)
 
 # Create the static library
 add_library(${PROJECT_NAME} STATIC ${SOURCES})
+
+target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_20)
+set_target_properties(${PROJECT_NAME} PROPERTIES 
+                        CXX_STANDARD 20
+                        CXX_EXTENSIONS OF)
+
 target_include_directories(${PROJECT_NAME} PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:${INSTALL_INC_DIR}>
