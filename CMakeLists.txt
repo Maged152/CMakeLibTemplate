@@ -4,6 +4,7 @@ project(CMakeLibTemplate VERSION 0.0.1)
 # Enable CTest and options only for the main project
 if(CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR)
     include(CTest)
+    set(PARENT_PROJECT_NAME ${PROJECT_NAME})
     option(CMakeLibTemplate_BUILD_TESTING "Enable testing" ON)
     option(CMakeLibTemplate_BUILD_EXAMPLES "Enable examples" ON)
 endif()
