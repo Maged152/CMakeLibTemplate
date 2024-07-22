@@ -8,4 +8,11 @@ foreach(EXAMPLE_SOURCE ${EXAMPLE_SOURCES})
     set_target_properties(${EXAMPLE_NAME} PROPERTIES
                           CXX_STANDARD 20
                           CXX_EXTENSIONS OFF)
+    
+    add_custom_target(Example_${EXAMPLE_NAME}
+        COMMAND ${CMAKE_COMMAND} -E env
+                ${CMAKE_CURRENT_BINARY_DIR}/${EXAMPLE_NAME}
+        # DEPENDS ${EXAMPLE_NAME}
+        COMMENT "Running ${EXAMPLE_NAME} example"
+    )
 endforeach()
