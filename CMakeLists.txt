@@ -9,6 +9,8 @@ if(CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR)
     option(CMakeLibTemplate_BUILD_EXAMPLES "Enable examples" ON)
 endif()
 
+option(CMakeLibTemplate_BUILD_Doc "Build documentations" ON)
+
 # Configuration
 set(version_config "${PROJECT_NAME}ConfigVersion.cmake")
 set(project_config "${PROJECT_NAME}Config.cmake")
@@ -48,6 +50,12 @@ endif()
 if(CMakeLibTemplate_BUILD_EXAMPLES)
     message(STATUS "Examples for ${PROJECT_NAME} are enabled")
     add_subdirectory(examples)
+endif()
+
+# Check if documentations are enabled
+if(CMakeLibTemplate_BUILD_Doc)
+    message(STATUS "documentations for ${PROJECT_NAME} are enabled")
+    add_subdirectory(doc)
 endif()
 
 # Install the library
