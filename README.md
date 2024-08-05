@@ -19,6 +19,15 @@ CMakeLibTemplate is a comprehensive template designed to streamline the process 
 ## Configure 
     $ cmake -S <source_dir> -B <build_dir>
 
+You can use `presets`
+
+    $ cmake -S <source_dir> --preset <preset_name>
+
+To know the existing presets
+
+    $ cmake -S <source_dir> --list-presets
+
+
 ## Build
     $ cmake --build <build_dir>
 

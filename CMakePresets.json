@@ -8,6 +8,7 @@
 		},
 		{
 			"name": "g++",
+			"displayName": "g++ configuration",
 			"inherits": "base",
 			"description": "Configure with g++",
 			"generator": "MinGW Makefiles",
@@ -19,6 +20,7 @@
 		{
 			"name": "msvc",
 			"inherits": "base",
+			"displayName": "msvc configuration",
 			"description": "Configure with MSVC",
 			"generator": "Visual Studio 17 2022",
 			"cacheVariables": {
@@ -38,5 +40,12 @@
 			"configurePreset": "msvc",
 			"description": "Build with msvc"
 		}
+	],
+	"testPresets": [
+	  {
+		"name": "base",
+		"configurePreset": "base",
+		"output": {"outputOnFailure": true}
+	  }
 	]
 }
