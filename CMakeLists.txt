@@ -28,10 +28,9 @@ file(GLOB_RECURSE SOURCES source/*.cpp)
 # Create the static library
 add_library(${PROJECT_NAME} STATIC ${SOURCES})
 
-target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_20)
 set_target_properties(${PROJECT_NAME} PROPERTIES 
                         CXX_STANDARD 20
-                        CXX_EXTENSIONS OF)
+                        CXX_EXTENSIONS OFF)
 
 target_include_directories(${PROJECT_NAME} PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
