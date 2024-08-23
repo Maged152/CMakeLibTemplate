@@ -12,6 +12,8 @@ if (DOXYGEN_FOUND)
 
     # Set project-specific Doxygen settings
     set(DOXYGEN_PROJECT_NAME ${PROJECT_NAME})
+    set(DOXYGEN_PROJECT_BRIEF "CMake template")
+    set(DOXYGEN_INPUT "include")
     set(DOXYGEN_OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}")
     set(DOXYGEN_GENERATE_HTML "YES")
     set(DOXYGEN_HTML_OUTPUT "${CMAKE_BINARY_DIR}/html")
