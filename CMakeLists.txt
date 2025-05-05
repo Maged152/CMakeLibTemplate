@@ -15,7 +15,7 @@ option(CMakeLibTemplate_BUILD_Doc "Build documentations" ON)
 set(version_config "${PROJECT_NAME}ConfigVersion.cmake")
 set(project_config "${PROJECT_NAME}Config.cmake")
 set(TARGETS_EXPORT_NAME "${PROJECT_NAME}Targets")
-set(namespace "NameSpace::")
+set(namespace "NameSpace")
 set(INSTALL_INC_DIR "include")
 set(INSTALL_BIN_DIR "bin")
 set(INSTALL_LIB_DIR "lib")
@@ -37,7 +37,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC
     $<INSTALL_INTERFACE:${INSTALL_INC_DIR}>
 )
 
-add_library(NameSpace::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
+add_library(${namespace}::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
 # Check if testing is enabled
 if(CMakeLibTemplate_BUILD_TESTING AND BUILD_TESTING)
