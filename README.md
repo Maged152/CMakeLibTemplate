@@ -12,6 +12,7 @@ CMakeLibTemplate is a comprehensive template designed to streamline the process 
 * Clone the repository.
 * Rename the project:
    * Replace all instances of `CMakeLibTemplate` with your project name.
+   * Replace `qlm` with your namespace
 * Make sure your project follows the same directory structure.
 
 # Build & Targets
